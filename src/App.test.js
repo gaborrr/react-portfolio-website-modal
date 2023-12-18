@@ -2,46 +2,75 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import profileData from "./profiledata.json";
 
+import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
 
 describe("profileData", () => {
 
-  test('json not null', () => {
+  it('json not null', () => {
     expect(profileData).not.toBeNull();
   });
 
-  test('json length not 0', () => {
-    expect(profileData.length).not.toBe(0);
+  it('json length not 0', () => {
+    expect(profileData).not.toHaveLength(0);
   });
 
-  test('json item .id has to be number', () => {
+  it('json item .id has to be number', () => {
     expect(profileData[0].id).toBeGreaterThanOrEqual(0);
   });
 
-  test('json item .title not empty', () => {
+  it('json item .title not empty', () => {
     expect(profileData[0].title).not.toBe('');
   });
 
-  test('json item .img not empty', () => {
+  it('json item .img not empty', () => {
     expect(profileData[0].img).toBeTruthy();
   });
 
-  test('json item .imgalt not empty', () => {
+  it('json item .imgalt not empty', () => {
     expect(profileData[0].imgalt).toBeTruthy();
   });
 
-  test('json item .technologies not empty', () => {
+  it('json item .technologies not empty', () => {
     expect(profileData[0].technologies).toBeTruthy();
   });
 
-  test('json item .role not empty', () => {
+  it('json item .role not empty', () => {
     expect(profileData[0].role).toBeTruthy();
+  });
+});
+
+describe('render the Profile data list', () => {
+
+  it('render the Profile data cards', () => {
+    render(<App />);
+
+    for (let item of profileData) {
+      let title = item.title;
+      let imgalt = item.imgalt;
+
+      screen.getByText(title);
+      screen.getByAltText(imgalt);
+    }
+  });
+
+  it('render one modal data', async () => {
+    const user = userEvent.setup();
+
+    act(() => {
+      render(<App />);
+    });
+
+    const cardItem = screen.getByText(/google.com 1/i);
+    await user.click(cardItem);
+
+    const cardItemModal = screen.getByText(/other notes about the website/i);
+    expect(cardItemModal).toBeInTheDocument();
+
   });
 
 });
 
-test('renders google.com', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/google.com 1/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+
 
