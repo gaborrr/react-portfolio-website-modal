@@ -4,7 +4,7 @@
         "title": "google.com 1",
         "url": "https://www.google.com",
         "img": "./imagesPortfolio/google.webp",
-        "imgalt": "example website",
+        "imgalt": "example website 1",
         "cms": " Content Management System example",
         "technologies": "notes about the website",
         "role": "other notes about the website"
@@ -14,7 +14,7 @@
         "title": "google.com 2",
         "url": "https://www.google.com",
         "img": "./imagesPortfolio/google.webp",
-        "imgalt": "example website",
+        "imgalt": "example website 2",
         "cms": " Content Management System example",
         "technologies": "notes about the website",
         "role": "other notes about the website"
@@ -24,7 +24,7 @@
         "title": "google.com 3",
         "url": "https://www.google.com",
         "img": "./imagesPortfolio/google.webp",
-        "imgalt": "example website",
+        "imgalt": "example website 3",
         "cms": " Content Management System example",
         "technologies": "notes about the website",
         "role": "other notes about the website"
@@ -34,7 +34,7 @@
         "title": "google.com 4",
         "url": "https://www.google.com",
         "img": "./imagesPortfolio/google.webp",
-        "imgalt": "example website",
+        "imgalt": "example website 4",
         "cms": " Content Management System example",
         "technologies": "notes about the website",
         "role": "other notes about the website"

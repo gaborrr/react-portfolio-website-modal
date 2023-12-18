@@ -15,14 +15,14 @@ function Card(props) {
                 listItem={listItem}
                 onHide={() => setModalShow(false)}
             />
-            <div key={props.portfolioItem.id} className="card-item text-start col-sm-12 col-md-6 col-xl-4" variant="primary" onClick={() => { setModalShow(true); setListItem(props.portfolioItem) }} >
+            <section className="card-item text-start col-sm-12 col-md-6 col-xl-4" variant="primary" onClick={() => { setModalShow(true); setListItem(props.portfolioItem) }} >
                 <div className="card-body">
                     <h2 className="card-title mb-2">{props.portfolioItem.title}</h2>
                 </div>
                 <div className="img-wrapper">
                     <img className="card-img-top" src={props.portfolioItem.img} alt={props.portfolioItem.imgalt} />
                 </div>
-            </div>
+            </section>
         </>
     );
 }
